@@ -1,0 +1,173 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url('pierre, papier, ciseaux.png');
+  color: #000000;
+}
+
+.container {
+  text-align: center;
+  background: #ffffff9c;
+  padding: 40px;
+  border-radius: 100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 5, 2.5);
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.scoreboard div {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.choice {
+  flex: 1 1 calc(33% - 20px);
+  margin: 10px;
+  padding: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000;
+  background: #f8f9fa;
+  border: 2px solid #343a40;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  text-align: center;
+}
+
+.choice:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.choice:hover:not(:disabled) {
+  background: #d4edda;
+  transform: scale(1.1);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #000000bb;
+  transform: scale(1.1);
+}
+
+button.hidden {
+  display: none;
+}
+
+.choice[data-choice="pierre"] {
+  background: #ff2424;
+}
+
+.choice[data-choice="feuille"] {
+  background: #21c226;
+}
+
+.choice[data-choice="ciseaux"] {
+  background: #223ee0;
+}
+
+.choice[data-choice="pierre"]:hover:not(:disabled) {
+  background: #5f0202;
+}
+
+.choice[data-choice="feuille"]:hover:not(:disabled) {
+  background: #037207;
+}
+
+.choice[data-choice="ciseaux"]:hover:not(:disabled) {
+  background: #001692;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .scoreboard div {
+    font-size: 1.2em;
+  }
+
+  .choice {
+    flex: 1 1 calc(50% - 20px);
+    font-size: 1.2em;
+  }
+
+  button {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .scoreboard div {
+    font-size: 1em;
+  }
+
+  .choices {
+    flex-direction: column;
+  }
+
+  .choice {
+    flex: 1 1 100%;
+    margin: 10px 0;
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 0.9em;
+  }
+}
